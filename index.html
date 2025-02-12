@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Airships: Lost Flotilla Postmortem
+</title>
+<style>,
+@font-face {
+	font-family: Montserrat;
+	src: url('Montserrat-Medium.ttf');
+}
+html {
+    cursor: none;
+}
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#image {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#caption {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 1em;
+	background: white;
+	font-size: 150%;
+}
+#title {
+    color: #251f21;
+    font-size: 400%;
+    margin-top: 6vw;
+    margin-bottom: 1em;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#points {
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 250%;
+}
+#points li {
+    list-style: none;
+    margin-bottom: 1em;
+}
+</style>
+<script>
+var slides = [{"points": ["Steampunk survivorslike / bullet heaven", "Same universe as previous game", "Launched three weeks ago"], "title": "Airships: Lost Flotilla Postmortem"}, {"caption": "Airships: Lost Flotilla, David Stark, 2025", "image": "AirshipsLostFlotillaRelease3.jpg", "points": [], "title": "AirshipsLostFlotillaRelease3.jpg Airships: Lost Flotilla, David Stark, 2025"}, {"points": ["Completed previous game and DLC in summer 2023", "Looking for new project", "Want to spread risk, do something a bit new"], "title": "Background"}, {"caption": "Airships: Conquer the Skies, David Stark, 2018", "image": "flank.jpg", "points": [], "title": "flank.jpg Airships: Conquer the Skies, David Stark, 2018"}, {"points": ["Played a lot of Brotato over Christmas/NY 2023", "Brotato x Airships", "Very few other survivorslikes at the time"], "title": "Idea"}, {"caption": "Brotato, Blobfish, 2023", "image": "brotato.jpg", "points": [], "title": "brotato.jpg Brotato, Blobfish, 2023"}, {"points": ["MonoGame instead of Java", "Vector graphics using Inkscape"], "title": "Implementation"}, {"points": ["Teamed up with Metaroot for publishing", "Released demo and marketing push before June 2024 Next Fest", "Next Fest didn't work well"], "title": "Marketing and Demo"}, {"points": ["Slay the Spire style world map", "In-game manual with secrets", "Graphics upgrade with explosions"], "title": "More Features"}, {"caption": "World Map", "image": "AirshipsLostFlotillaRelease5.jpg", "points": [], "title": "AirshipsLostFlotillaRelease5.jpg World Map"}, {"caption": "Manual", "image": "manual.png", "points": [], "title": "manual.png Manual"}, {"points": ["Lost 3+ months of dev time", "Plus feature creep: release slips from September 2024 to January 2024"], "title": "Then I Got Sick"}, {"points": ["Influencer push", "Twitch integration"], "title": "Pre-Launch Marketing"}, {"caption": "Twitch Integration", "image": "twitchescort.png", "points": [], "title": "twitchescort.png Twitch Integration"}, {"points": ["Smoothly releases on January 23", "Deck verification arrives January 25 :("], "title": "Release"}, {"points": ["5000 units @~$5 sold in 3 weeks", "93% of 132 reviews are positive"], "title": "Reviews and Sales Numbers"}, {"points": ["Development", "Co-publishing", "Manual with secret codes"], "title": "What Went Well"}, {"points": ["Launched into oversaturated market!", "Disappointing Next Fest", "Failed to get Deck Verified in time"], "title": "What Went Badly"}, {"points": ["Twitch integration was well-liked but game isn't big on Twitch", "MonoGame is mostly good but has a bunch of Linux gotchas", "People like the game <i>once they play it</i>", "<img src=\"goofy.png\">"], "title": "Mixed Results"}, {"points": ["Modding support", "One big update", "Hoping for a fat long tail"], "title": "What's next?"}, {"points": ["If you're gonna fast follow, be actually fast", "Do proper validation next time", "Screenshots matter a lot", "Having your own IP is a benefit", "Next Fest is (maybe) dead"], "title": "Things I've Learned: Marketing"}, {"points": ["Have a system to prevent deploying debug code", "Steam Deck cert takes weeks", "Spend your time wisely"], "title": "Things I've Learned: Development"}, {"points": ["Make sure your font supports all target languages", "English has verbs and nouns that are the same", "Make sure you're not missing any strings"], "title": "Translation Gotchas"}, {"points": ["You should buy the game and leave a positive review"], "title": "That's All!"}] ;
+</script>
+<script>
+var index = 0;
+function showSlide() {
+    if (slides[index].image) {
+        document.getElementById("title").innerHTML = "";
+        document.getElementById("image").src = slides[index].image;
+        document.getElementById("image").style.display = "block";
+        document.getElementById("caption").innerHTML = slides[index].caption;
+        document.getElementById("caption").style.display = "block";
+    } else {
+        document.getElementById("title").innerHTML = slides[index].title;
+        document.getElementById("image").src = "";
+        document.getElementById("image").style.display = "none";
+        document.getElementById("caption").style.display = "none";
+    }
+    document.getElementById("points").innerHTML = slides[index].points.map(function(p) {
+        return "<li>" + p + "</li>";
+    }).join("");
+}
+
+function next() {
+    if (index < slides.length - 1) {
+        index++;
+        showSlide();
+    }
+}
+
+function prev() {
+    if (index > 0) {
+        index--;
+        showSlide();
+    }
+}
+
+function keyup(event) {
+    if (event.code == "ArrowLeft") {
+        prev();
+    } else if (event.code == "ArrowRight" || event.code == "Space") {
+        next();
+    }
+}
+</script>
+</head>
+<body onClick="next()" onKeyUp="keyup(event)">
+<div style="width: 100%; height: 95px; background-color: #709bccff;">
+<img src="alflogo.png" style="position: fixed; top: 10px; left: 15px; height: 70px;">
+</div>
+<img id="image">
+<div id="caption"></div>
+<div id="title"></div>
+<ul id="points"></ul>
+<script>
+showSlide();
+</script>
+</body>
+</html>
+

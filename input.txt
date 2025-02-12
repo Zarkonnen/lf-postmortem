@@ -1,0 +1,74 @@
+Airships: Lost Flotilla Postmortem
+- Steampunk survivorslike / bullet heaven
+- Same universe as previous game
+- Launched three weeks ago
+AirshipsLostFlotillaRelease3.jpg Airships: Lost Flotilla, David Stark, 2025
+Background
+- Completed previous game and DLC in summer 2023
+- Looking for new project
+- Want to spread risk, do something a bit new
+flank.jpg Airships: Conquer the Skies, David Stark, 2018
+Idea
+- Played a lot of Brotato over Christmas/NY 2023
+- Brotato x Airships
+- Very few other survivorslikes at the time
+brotato.jpg Brotato, Blobfish, 2023
+Implementation
+- MonoGame instead of Java
+- Vector graphics using Inkscape
+Marketing and Demo
+- Teamed up with Metaroot for publishing
+- Released demo and marketing push before June 2024 Next Fest
+- Next Fest didn't work well
+More Features
+- Slay the Spire style world map
+- In-game manual with secrets
+- Graphics upgrade with explosions
+AirshipsLostFlotillaRelease5.jpg World Map
+manual.png Manual
+Then I Got Sick
+- Lost 3+ months of dev time
+- Plus feature creep: release slips from September 2024 to January 2024
+Pre-Launch Marketing
+- Influencer push
+- Twitch integration
+twitchescort.png Twitch Integration
+Release
+- Smoothly releases on January 23
+- Deck verification arrives January 25 :(
+Reviews and Sales Numbers
+- 5000 units @~$5 sold in 3 weeks
+- 93% of 132 reviews are positive
+What Went Well
+- Development
+- Co-publishing
+- Manual with secret codes
+What Went Badly
+- Launched into oversaturated market!
+- Disappointing Next Fest
+- Failed to get Deck Verified in time
+Mixed Results
+- Twitch integration was well-liked but game isn't big on Twitch
+- MonoGame is mostly good but has a bunch of Linux gotchas
+- People like the game <i>once they play it</i>
+- <img src="goofy.png">
+What's next?
+- Modding support
+- One big update
+- Hoping for a fat long tail
+Things I've Learned: Marketing
+- If you're gonna fast follow, be actually fast
+- Do proper validation next time
+- Screenshots matter a lot
+- Having your own IP is a benefit
+- Next Fest is (maybe) dead
+Things I've Learned: Development
+- Have a system to prevent deploying debug code
+- Steam Deck cert takes weeks
+- Spend your time wisely
+Translation Gotchas
+- Make sure your font supports all target languages
+- English has verbs and nouns that are the same
+- Make sure you're not missing any strings
+That's All!
+- You should buy the game and leave a positive review
