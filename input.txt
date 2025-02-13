@@ -39,6 +39,7 @@ Release
 Reviews and Sales Numbers
 - 5000 units @~$5 sold in 3 weeks
 - 93% of 132 reviews are positive
+- Break-even at 25000 lifetime units
 What Went Well
 - Development
 - Co-publishing
@@ -52,6 +53,12 @@ Mixed Results
 - MonoGame is mostly good but has a bunch of Linux gotchas
 - People like the game <i>once they play it</i>
 - <img src="goofy.png">
+Charts: Wishlists
+- <img src="wishlists.png">
+Charts: Sales
+- <img src="sales.png">
+Charts: Players
+- <img src="players.png">
 What's next?
 - Modding support
 - One big update
